@@ -1,0 +1,30 @@
+---
+layout: base.njk
+---
+<!-- Add class="back-link" -->
+<a href=".." class="back-link">← Back to {{ parentName }}</a>
+
+<article>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+</article>
+
+<!-- Add class="pagination-nav" -->
+<nav class="pagination-nav">
+  {% set noteGroup = tags[0] %}
+  {% set sortedNotes = collections[noteGroup] | sort(false, false, 'data.order') %}
+  {% set previousNote = sortedNotes | getPreviousCollectionItem(page) %}
+  {% set nextNote = sortedNotes | getNextCollectionItem(page) %}
+
+  <!-- Previous Button -->
+  {% if previousNote %}
+    <a href="{{ previousNote.url }}">← {{ previousNote.data.title }}</a>
+  {% else %}
+    <span></span> <!-- Empty span to keep the "Next" button pushed to the right -->
+  {% endif %}
+
+  <!-- Next Button -->
+  {% if nextNote %}
+    <a href="{{ nextNote.url }}">{{ nextNote.data.title }} →</a>
+  {% endif %}
+</nav>

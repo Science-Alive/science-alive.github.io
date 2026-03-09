@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Tech Programs
+---
+<h1>Current Tech Programs</h1>
+
+<ul class="program-list">
+{% for program in collections.program %}
+  
+  <!-- 1. Check if there is a custom image. If not, use a default class. -->
+  <li class="program-card" 
+      style="{% if program.data.cardImage %}background-image: url('{{ program.data.cardImage }}');{% endif %}">
+    
+    <!-- 2. The Color Overlay (The "Scrim") -->
+    <div class="card-overlay"></div>
+
+    <!-- 3. The Content -->
+    <div class="card-content">
+      <a href="{{ program.url }}" class="card-link">
+        {{ program.data.title }}
+      </a>
+    </div>
+
+  </li>
+
+{% endfor %}
+</ul>

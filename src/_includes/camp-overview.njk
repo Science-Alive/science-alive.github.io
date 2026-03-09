@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<a href="/" class="back-link">← Back to Home</a>
+
+<h1>{{ title }}</h1>
+
+<section>
+  <!-- Camp overview content goes here -->
+  {{ content | safe }}
+</section>
+
+<section>
+  <h2>Camp Overview</h2>
+  <ol class="module-list">
+    <!-- Dynamically pull the tag defined in the camp's index.md -->
+    {% set days = collections[dayTag] | sort(false, false, 'data.order') %}
+    {% for day in days %}
+      <li>
+        <a href="{{ day.url }}" class="module-link">{{ day.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+</section>

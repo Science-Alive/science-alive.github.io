@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<a href="/">← Back to All Programs</a>
+
+<h1>{{ title }}</h1>
+<p>{{ content | safe }}</p>
+
+<section>
+  <h2>Event Modules</h2>
+  <ul>
+    <!-- Grabs the notes directly -->
+    {% set notes = collections[noteTag] | sort(false, false, 'data.order') %}
+    {% for note in notes %}
+      <li>
+        <a href="{{ note.url }}">{{ note.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
