@@ -152,7 +152,7 @@ h1 {
 
 Every single HTML element, from your `<h1>` to your `<img>`, is treated by the browser as its own **rectangular box**. Understanding this box is key to controlling layout.
 
-![Box model diagram](/assets/images/tech/intro-to-web-dev/Box_model.png)
+![CSS Box Model Diagram](/images/css-box-model.png)
 
 Think of your element as a **Gift Box**:
 
