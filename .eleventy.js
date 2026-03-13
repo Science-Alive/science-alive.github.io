@@ -4,9 +4,10 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   // Copy CSS/Images directly to the site without touching them
-  eleventyConfig.addPassthroughCopy("src/logos");
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/logos");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   // Configure the Markdown library
   const markdownLib = markdownIt({

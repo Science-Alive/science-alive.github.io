@@ -6,9 +6,29 @@
   --text-main: #333333;
 }
 
+@font-face {
+  font-family: sen;
+  src: url("/fonts/sen.ttf");
+}
+
 /* 2. Basic Global Styles */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family:
+    sen,
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    Adwaita Sans,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    helvetica,
+    arial,
+    sans-serif;
   background-color: var(--bg-light);
   color: var(--text-main);
   margin: 0;
